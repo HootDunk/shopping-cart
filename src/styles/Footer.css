@@ -1,0 +1,14 @@
+.footer {
+  min-height: 7vh;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.footer img {
+  margin: 0;
+  max-height: 3vh;
+  width: auto;
+}

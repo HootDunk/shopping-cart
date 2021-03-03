@@ -1,0 +1,31 @@
+
+.shopping-cart {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 3rem;
+}
+
+.shopping-cart-open {
+  position: fixed;
+  right: 0;
+  margin-top: 3rem;
+  margin-right: 10px;
+  height: 40rem;
+  width: 25rem;
+  z-index: 10;
+  background-color: rgb(224, 223, 223);
+  color: black;
+  display: flex;
+  justify-content: center;
+  border-radius: 3rem;
+}
+
+
+.fas.fa-shopping-cart {
+  font-size: 1.5rem;
+}
+
+.shopping-cart-open h1 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}

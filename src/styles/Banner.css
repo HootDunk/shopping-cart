@@ -1,0 +1,14 @@
+.banner {
+  font-family: Montserrat, sans-serif;
+  height: 5vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner > p {
+  color: white;
+  font-size: .8rem;
+  font-weight: 400;
+}
