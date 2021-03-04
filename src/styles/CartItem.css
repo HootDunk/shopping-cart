@@ -1,0 +1,35 @@
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 1rem 0;
+}
+
+.amount-adjust {
+  margin-top: 0.5rem;
+}
+
+.amount-adjust p {
+  display: inline;
+}
+
+.amount-adjust .fas {
+  margin: 0 1rem 0 1rem;
+  cursor: pointer;
+}
+
+.cart-item img {
+  max-height: 6rem;
+}
+
+.fas.fa-times {
+  margin: 2rem;
+  cursor: pointer;
+}
+
+.cart-middle > p {
+  margin-top: 0.5rem;
+}
+
+
+

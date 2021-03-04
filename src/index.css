@@ -18,6 +18,10 @@ code {
     monospace;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
 
 
 @media only screen and (max-width: 600px) {

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import CartItem from "./CartItem"
 import '../styles/ShoppingCart.css'
 
 export default function ShoppingCart() {
@@ -16,7 +17,16 @@ export default function ShoppingCart() {
             <i onClick={handleClick}  className="fas fa-shopping-cart"></i>
             <p>+1</p>
             <div className="shopping-cart-open">
-              <h1>Summary</h1>
+              <h1>Shopping Cart</h1>
+              <CartItem />
+              <CartItem />
+
+              <div className="subtotal">
+                <p>Subtotal</p>
+                <h2>$52.87</h2>
+                <p className="fine-print">Taxes and shipping calculated at checkout</p>
+                <button>Check Out</button>
+              </div>
             </div>
           </div>
     )

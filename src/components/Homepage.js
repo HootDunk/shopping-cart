@@ -8,6 +8,7 @@ export default function Homepage() {
     <div>
       <Banner />
       <div className="homepage-content">
+        {/* Header needs to be inside main-content div as its position is set to fixed (outside of document flow) */}
         <Header />
       </div>
       <Footer />

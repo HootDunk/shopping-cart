@@ -10,16 +10,26 @@
   right: 0;
   margin-top: 3rem;
   margin-right: 10px;
+  padding: 1rem;
   height: 40rem;
   width: 25rem;
   z-index: 10;
   background-color: rgb(224, 223, 223);
   color: black;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  cursor: default;
   border-radius: 3rem;
+  overflow: auto;
 }
 
+.shopping-cart-open {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.shopping-cart-open::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
 
 .fas.fa-shopping-cart {
   font-size: 1.5rem;
@@ -27,5 +37,33 @@
 
 .shopping-cart-open h1 {
   font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.subtotal {
+  margin-top: 1rem;
+}
+
+.subtotal > button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.8rem 0.7rem 1.8rem;
+  background-color: #3e3e3e;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.subtotal > p {
+  font-size: .8rem;
+  margin: 0.5rem;
+}
+
+.subtotal > button:hover {
+  background-color: #6e6c6c;
+}
+
+p.fine-print {
+  font-size: 0.7rem;
   font-weight: 400;
 }
