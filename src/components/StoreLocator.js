@@ -7,7 +7,7 @@ export default function StoreLocator(props) {
     <div>
       <Banner />
       <div>
-        <Header location={props.location.pathname}/>
+        <Header darkBanner={true}/>
       </div>
       
     </div>

@@ -1,0 +1,13 @@
+button.main {
+  margin-top: 1rem;
+  padding: 0.7rem 1.8rem 0.7rem 1.8rem;
+  background-color: #3e3e3e;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+button.main:hover {
+  background-color: #6e6c6c;
+}

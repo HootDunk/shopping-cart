@@ -1,0 +1,13 @@
+.store-content{
+  text-align: center;
+}
+
+.store-content > h1 {
+  font-weight: 300;
+}
+
+.drink-selection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,56 @@
+.store-item {
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  margin: 2rem;
+  /* height: 35vh;
+  width: auto; */
+  /* background-image: url(../3d-assets/5d81923ae7908ebb8d56cdc0_3d_energy_white_1_300x.png?v=1593719465);
+  object-fit: cover; */
+}
+
+
+.store-item > img {
+  height: 20rem;
+  width: auto;
+}
+
+.store-item > p {
+  margin: 0.5rem;
+}
+
+.drink-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.drink-amount {
+  font-size: 1.1rem;
+}
+
+.drink-price {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+
+.overlay {
+  position: relative;
+  top: -8.5rem;
+  margin-bottom: -3.3rem;
+  animation: overlay 0.4s ease;
+}
+
+@keyframes overlay {
+  0% {
+    opacity: 0;
+    transform: translateY(3.5rem);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+

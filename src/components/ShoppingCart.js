@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import CartItem from "./CartItem"
+import Button from "./Button"
 import '../styles/ShoppingCart.css'
 
 export default function ShoppingCart() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(prevIsOpen => !prevIsOpen)
@@ -25,7 +26,7 @@ export default function ShoppingCart() {
                 <p>Subtotal</p>
                 <h2>$52.87</h2>
                 <p className="fine-print">Taxes and shipping calculated at checkout</p>
-                <button>Check Out</button>
+                <Button text="Check Out"/>
               </div>
             </div>
           </div>

@@ -19,6 +19,5 @@ export default function CartItem() {
       </div>
       <hr />
     </div>
-
   )
 }
