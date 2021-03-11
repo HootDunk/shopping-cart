@@ -1,6 +1,7 @@
 .store-item {
   text-align: center;
   font-family: Montserrat, sans-serif;
+
   margin: 2rem;
   /* height: 35vh;
   width: auto; */
@@ -36,7 +37,7 @@
 
 .overlay {
   position: relative;
-  top: -8.5rem;
+  top: -5.7rem;
   margin-bottom: -3.3rem;
   animation: overlay 0.4s ease;
 }

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from "react-router-dom"
 import CartItem from "./CartItem"
 import Button from "./Button"
 import '../styles/ShoppingCart.css'
@@ -26,7 +27,10 @@ export default function ShoppingCart() {
                 <p>Subtotal</p>
                 <h2>$52.87</h2>
                 <p className="fine-print">Taxes and shipping calculated at checkout</p>
-                <Button text="Check Out"/>
+                <Link to="/checkout">
+                  <Button text="Check Out"/>
+                </Link>
+
               </div>
             </div>
           </div>

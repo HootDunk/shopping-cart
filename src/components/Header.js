@@ -20,7 +20,9 @@ export default function Header(props) {
               <Link to="/buy-online">Buy Online</Link>
             </li>
             <li><Link to="/store-locator">Store Locator</Link></li>
-            <li><ShoppingCart /></li>
+            <li>
+              <ShoppingCart />
+            </li>
           </ul>
         </div>
       </header>

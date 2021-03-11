@@ -1,4 +1,49 @@
-/* .item-info > img {
+
+.item-info {
+  height: 85vh;
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.item-info > img {
+  height: 75vh;
+  width: auto;
+  /* height: auto;
+  width: 50%; */
+  /* margin: 0 -1rem 0 -1rem; */
+}
+
+.item-details {
+  /* background-color: red; */
+  height: 100%;
   width: 50%;
-  height: auto;
-} */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-details-content {
+  width: 80%;
+  height: 75%;
+  background-color: #f8f8f8;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.item-details-content h1 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.sale-options {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+/* Need to add breakpoint for changing the flex-wrap on smaller phone screens */

@@ -1,0 +1,17 @@
+.amount-adjust {
+  margin-top: 0.5rem;
+}
+
+.amount-adjust p {
+  display: inline;
+}
+
+.amount-adjust .fas {
+  margin: 0 1rem 0 1rem;
+  cursor: pointer;
+}
+
+.fas.fa-times {
+  margin: 2rem;
+  cursor: pointer;
+}
