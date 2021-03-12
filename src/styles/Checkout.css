@@ -1,10 +1,17 @@
 .order-complete {
   background-color: black;
-  height: 85vh;
+  min-height: 85vh;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.order-container {
+  margin-top: -5rem;
+  width: 40%;
+  text-align: center;
 }
 
 /* .order-complete h1 {
@@ -13,4 +20,17 @@
 
 .message {
   text-align: center;
+}
+
+
+.order-summary {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.total {
+  text-align: right;
 }

@@ -4,12 +4,21 @@ import CartItem from "./CartItem"
 import Button from "./Button"
 import '../styles/ShoppingCart.css'
 
-export default function ShoppingCart() {
+export default function ShoppingCart(props) {
+
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(prevIsOpen => !prevIsOpen)
   }
+
+  console.log("shopping cart => ", props)
+
+  // // maybe move this outside to it's own folder
+  // const getItemInfo = (id) => {
+  //   return props.storeContent.find(item => item.id === id)
+  // }
+
 
 
   if (isOpen){
@@ -17,15 +26,21 @@ export default function ShoppingCart() {
     return(
           <div className="shopping-cart">
             <i onClick={handleClick}  className="fas fa-shopping-cart"></i>
-            <p>+1</p>
+            <p>{props.cart.totalItems && `+${props.cart.totalItems}`}</p>
             <div className="shopping-cart-open">
               <h1>Shopping Cart</h1>
-              <CartItem />
-              <CartItem />
+              {props.cart.items.map((item) => {
+                return <CartItem 
+                  key={item.id} 
+                  amount={item.count} 
+                  item={props.getItemInfo(item.id)}
+                  addToCart={props.addToCart}
+                />
+              })}
 
               <div className="subtotal">
                 <p>Subtotal</p>
-                <h2>$52.87</h2>
+                <h2>${props.getCartTotal()}</h2>
                 <p className="fine-print">Taxes and shipping calculated at checkout</p>
                 <Link to="/checkout">
                   <Button text="Check Out"/>
@@ -40,7 +55,7 @@ export default function ShoppingCart() {
     return (
       <div onClick={handleClick} className="shopping-cart">
         <i className="fas fa-shopping-cart"></i>
-        <p>+1</p>
+        <p>{props.cart.totalItems && `+${props.cart.totalItems}`}</p>
       </div>
     )
   }

@@ -1,11 +1,15 @@
 import React, {useState} from 'react'
 import { Link } from "react-router-dom"
-import white from '../3d-assets/5d81923ae7908ebb8d56cdc0_3d_energy_white_1_300x.png?v=1593719465'
 import Button from "./Button"
 import '../styles/StoreItem.css'
 
-export default function StoreItem() {
+export default function StoreItem(props) {
   const [showOverlay, setShowOverlay] = useState(false);
+
+
+  // const { largeImg, name, amount, price } = props.data;
+  // console.log(name)
+
 
   return (
     <div 
@@ -13,17 +17,17 @@ export default function StoreItem() {
       onMouseLeave={() => setShowOverlay(false)}
       className="store-item"
     >
-      <img src={white} alt="drink"/>
+      <img src={props.data.mediumImg} alt="drink"/>
       {showOverlay &&
       <div className="overlay">
-        <Link to="/buy-online/item-info">
+        <Link to={`/buy-online/item-info/${props.data.id}`}>
           <Button text="View Product"/>
         </Link>
       </div>
       }
-      <p className="drink-name">White</p>
-      <p className="drink-amount">12 Pack</p>
-      <p className="drink-price">$24.99</p>
+      <p className="drink-name">{props.data.name}</p>
+      <p className="drink-amount">{props.data.amount}</p>
+      <p className="drink-price">${props.data.price}</p>
     </div>
   )
 }
