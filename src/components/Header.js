@@ -6,7 +6,7 @@ import ShoppingCart from './ShoppingCart'
 export default function Header(props) {
 
   return (
-    <div className={(props.darkBanner)? "header dark-banner" : "header" }>
+    <div className={props.class}>
       <header>
         <div className="logo">
           <img src={Logo} alt="3d logo"/>

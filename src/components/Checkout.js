@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from './Header'
-import Banner from './Banner'
 import CartItem from './CartItem'
 import Button from './Button'
 import '../styles/Checkout.css'
@@ -20,12 +18,8 @@ export default function Checkout(props) {
 
   return (
     <div>
-      <Banner />
       <div>
-        <Header darkBanner={true}/>
-
         <div className="order-complete">
-
           <div className="order-container">
             <h1>Your Cart</h1>
             
@@ -40,17 +34,13 @@ export default function Checkout(props) {
           </div>
           <Button text="Confirm Purchase" />
 
-
-
           {/* <div className="message">
             <div>
               <h1>We will process your order soon.</h1>
               <h1>Thank you for your purchase.</h1>
             </div>
           </div> */}
-
         </div>
-        
       </div>
     </div>
   )

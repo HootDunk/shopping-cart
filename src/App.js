@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Routes from './Routes'
+
 import storeContent from './data'
 
 export default function App() {
@@ -9,7 +10,6 @@ export default function App() {
     items: [],
   });
 
-  
   // need to add removeFromCartFunction
   // connect the checkout page to js logic
   // add a message for when purchase is confirmed and reset cart after timeout
@@ -49,16 +49,14 @@ export default function App() {
       let drink = storeContent.find(storeItem =>storeItem.id === cartItem.id);
       total += drink.price * cartItem.count;
     })
+    total = Math.round(total * 100) / 100;
     return total;
   }
-
-  // const incrementCount = (id) => {
-  //   // we can actually use the addToCart method here.
-  // }
 
 
   return (
     <div>
+
       <Routes cart={cart} addToCart={addToCart} getItemInfo={getItemInfo} getCartTotal={getCartTotal}/>
     </div>
   )

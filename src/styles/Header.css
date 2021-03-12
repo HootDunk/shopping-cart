@@ -1,10 +1,19 @@
 .header {
   height: 10vh;
-  position: -webkit-sticky; /* Safari */
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 5;
+  background-color: black;
+}
 
+.header-homepage {
+  margin-top: 5vh;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 5;
 }
 
 header {
@@ -39,10 +48,7 @@ li {
   cursor: pointer;
 }
 
-.header:hover {
+.header-homepage:hover {
   background-color: black;
 }
 
-.dark-banner {
-  background-color: black;
-}

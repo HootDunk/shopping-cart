@@ -1,12 +1,10 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import Header from './Header'
-import Banner from './Banner'
 import AmountAdjuster from './AmountAdjuster'
 import Button from './Button'
 import '../styles/ItemInfo.css'
 export default function ItemInfo(props) {
-
+  console.log(props)
   // hmmmm.
   const item = props.getItemInfo(Number(props.router.match.params.id));
   
@@ -20,15 +18,7 @@ export default function ItemInfo(props) {
 
   return (
     <div>
-      <Banner />
       <div className="item-info-container">
-        <Header 
-          darkBanner={true} 
-          cart={props.cart} 
-          addToCart={props.addToCart} 
-          getItemInfo={props.getItemInfo}
-          getCartTotal={props.getCartTotal}
-        />
         <div className="item-info">
           <img src={item.largeImg} alt="white"/>
           <div className="item-details">
