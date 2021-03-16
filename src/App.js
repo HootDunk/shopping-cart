@@ -10,13 +10,12 @@ export default function App() {
     items: [],
   });
 
-  // need to add removeFromCartFunction
+
   // connect the checkout page to js logic
-  // add a message for when purchase is confirmed and reset cart after timeout
+  // finish the buy it now buttom (use react-router redirect)
+  // add a message for when purchase is confirmed and reset cart after timeout, then redirect to homepage
   // need to also do the homepage.
 
-  // longterm changes -> redo css so that the header is separate from (but still overlays) page content.  then move
-  // the header out and place outside the routes.  move all logic out as well.  It will really simplify the app. 
 
   const addToCart = (id) => {
     let copy = [...cart.items];
@@ -38,6 +37,43 @@ export default function App() {
     });
   }
 
+  const removeOne = (id) => {
+    let copy = [...cart.items];
+    // get cart item index and drecrment
+    const index = copy.findIndex(item => item.id === id);
+    // item not in cart, do nothing
+    if (index === -1){
+      return;
+    }
+
+    copy[index].count--;
+    // if count reaches zero, remove the item
+    if (copy[index].count === 0){
+      copy.splice(index, 1);
+    }
+    setCart(prevCart => {
+      return {
+        totalItems: prevCart.totalItems - 1,
+        items: copy,
+      }
+    });
+  }
+  // remove all items of matching id from cart
+  const removeAll = (id) => {
+    console.log(id)
+    let copy = [...cart.items];
+    // just filter and update state
+    copy = copy.filter(item => item.id !== id);
+    let newTotal = 0;
+    copy.forEach(item => newTotal += item.count);
+    setCart(
+      {
+        totalItems: newTotal,
+        items: copy,
+      }
+    )
+  }
+
   // maybe move this outside to it's own folder
   const getItemInfo = (id) => {
     return storeContent.find(item => item.id === id)
@@ -57,7 +93,7 @@ export default function App() {
   return (
     <div>
 
-      <Routes cart={cart} addToCart={addToCart} getItemInfo={getItemInfo} getCartTotal={getCartTotal}/>
+      <Routes cart={cart} removeAll={removeAll} removeOne={removeOne} addToCart={addToCart} getItemInfo={getItemInfo} getCartTotal={getCartTotal}/>
     </div>
   )
 }

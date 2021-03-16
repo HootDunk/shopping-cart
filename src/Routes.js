@@ -12,23 +12,15 @@ const Routes = (props) => {
 
   // this changes header styling at top level to save from unecessary component nesting
   const getHeader = (path) => {
-    if(path === '/'){
       return <Header 
-      class="header-homepage" 
-      cart={props.cart} 
-      addToCart={props.addToCart} 
-      getItemInfo={props.getItemInfo}
-      getCartTotal={props.getCartTotal}
-    />
-    } else {
-      return <Header 
-      class="header" 
-      cart={props.cart} 
-      addToCart={props.addToCart} 
-      getItemInfo={props.getItemInfo}
-      getCartTotal={props.getCartTotal}
-    />
-    }
+        class={(path === '/')? "header-homepage" : "header"} 
+        cart={props.cart}
+        removeAll={props.removeAll}
+        removeOne={props.removeOne}
+        addToCart={props.addToCart} 
+        getItemInfo={props.getItemInfo}
+        getCartTotal={props.getCartTotal}
+      />
   }
 
   return(
@@ -64,15 +56,31 @@ const Routes = (props) => {
           }
         />
         <Route exact path="/store-locator" component={StoreLocator} />
-        <Route exact path="/checkout" component={Checkout} />
-
+        <Route 
+          exact path="/checkout" 
+          component={(routeProps) => {
+            return <div>
+              {getHeader(routeProps.match.path)}
+              <Checkout 
+                cart={props.cart}
+                removeAll={props.removeAll}
+                removeOne={props.removeOne}
+                addToCart={props.addToCart} 
+                getItemInfo={props.getItemInfo}
+                getCartTotal={props.getCartTotal}
+              />
+            </div>
+            }
+          } 
+        />
         <Route 
           path="/buy-online/item-info/:id" 
           component={(routeProps) => {
             return <div>
               {getHeader(routeProps.match.path)}
               <ItemInfo 
-                router={routeProps} 
+                router={routeProps}
+                removeOne={props.removeOne}
                 addToCart={props.addToCart}
                 cart={props.cart}
                 getItemInfo={props.getItemInfo}

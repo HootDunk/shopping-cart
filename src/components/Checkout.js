@@ -23,13 +23,18 @@ export default function Checkout(props) {
           <div className="order-container">
             <h1>Your Cart</h1>
             
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-
+            {props.cart.items.map((item) => {
+                return <CartItem 
+                  key={item.id} 
+                  amount={item.count} 
+                  item={props.getItemInfo(item.id)}
+                  addToCart={props.addToCart}
+                  removeOne={props.removeOne}
+                  removeAll={props.removeAll}
+                />
+              })}
             <div className="total">
-              <h2>Total: $24.99</h2>
+              <h2>Total: ${props.getCartTotal()}</h2>
             </div>
           </div>
           <Button text="Confirm Purchase" />

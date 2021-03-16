@@ -17,7 +17,7 @@ export default function ItemInfo(props) {
   }
 
   return (
-    <div>
+
       <div className="item-info-container">
         <div className="item-info">
           <img src={item.largeImg} alt="white"/>
@@ -30,24 +30,31 @@ export default function ItemInfo(props) {
 
               <div>
                 <h4>Quantity</h4>
-                <AmountAdjuster amount={getQuantity()}  addToCart={props.addToCart} item={props.getItemInfo(item.id)}/>
+                <AmountAdjuster 
+                  amount={getQuantity()}  
+                  removeOne={props.removeOne} 
+                  addToCart={props.addToCart} 
+                  item={props.getItemInfo(item.id)}
+                />
               </div>
-
               <div>
                 <h2>${item.price}</h2>
                 <p>Shipping calculated at checkout</p>
               </div>
               <div className="sale-options">
-                <Button function={props.addToCart} itemID={item.id} text="Add to Cart" />
+                <Button 
+                  function={props.addToCart} 
+                  itemID={item.id} 
+                  text="Add to Cart" 
+                />
                 <Link to="/checkout">
                   <Button text="Buy it now" />
                 </Link>
               </div>
-
             </div>
           </div>
         </div>
       </div>
-    </div>
+
   )
 }

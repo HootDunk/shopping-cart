@@ -14,9 +14,9 @@ export default function CartItem(props) {
         <div className="cart-middle">
           <p>{props.item.name} - {props.item.amount}</p>
           <p>${props.item.price}</p>
-          <AmountAdjuster amount={props.amount} addToCart={props.addToCart} item={props.item}/>
+          <AmountAdjuster amount={props.amount} removeAll={props.removeAll} removeOne={props.removeOne} addToCart={props.addToCart} item={props.item}/>
         </div>
-        <i className="fas fa-times"></i>
+        <i onClick={() => props.removeAll(props.item.id)} className="fas fa-times"></i>
       </div>
       <hr />
     </div>

@@ -35,6 +35,8 @@ export default function ShoppingCart(props) {
                   amount={item.count} 
                   item={props.getItemInfo(item.id)}
                   addToCart={props.addToCart}
+                  removeOne={props.removeOne}
+                  removeAll={props.removeAll}
                 />
               })}
 
