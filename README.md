@@ -1,7 +1,7 @@
 # Shopping Cart
 
 ## Demo
-
+![shopping-cart](https://user-images.githubusercontent.com/58009556/111526340-9f8c1280-872c-11eb-9eef-5c037ef12f8d.gif)
 
 ## About
 Made With: React, React Router DOM, JavaScipt, HTML, CSS
