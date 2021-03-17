@@ -68,6 +68,7 @@ const Routes = (props) => {
                 addToCart={props.addToCart} 
                 getItemInfo={props.getItemInfo}
                 getCartTotal={props.getCartTotal}
+                resetCart={props.resetCart}
               />
             </div>
             }

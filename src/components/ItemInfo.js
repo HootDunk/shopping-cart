@@ -4,7 +4,7 @@ import AmountAdjuster from './AmountAdjuster'
 import Button from './Button'
 import '../styles/ItemInfo.css'
 export default function ItemInfo(props) {
-  console.log(props)
+  
 
   const item = props.getItemInfo(Number(props.router.match.params.id));
   

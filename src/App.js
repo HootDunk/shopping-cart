@@ -6,7 +6,7 @@ import storeContent from './data'
 export default function App() {
   
   const [cart, setCart] = useState({
-    totalItems: null,
+    totalItems: 0,
     items: [],
     isOpen: false,
   });
@@ -20,10 +20,15 @@ export default function App() {
     })
   }
 
-  // add a message for when purchase is confirmed and reset cart after timeout, then redirect to homepage
-  // would be nice to conditionally handle the shopping cart font color so dark pages it's white and white pages it's dark
-    // wouldn't take to long but is extra
-
+  const resetCart = () => {
+    setCart(
+      {
+        totalItems: 0,
+        items: [],
+        isOpen: false,
+      }
+    )
+  }
 
   const addToCart = (id) => {
     let copy = [...cart.items];
@@ -111,6 +116,7 @@ export default function App() {
         getItemInfo={getItemInfo} 
         getCartTotal={getCartTotal}
         toggleCart={toggleCart}
+        resetCart={resetCart}
       />
   )
 }
