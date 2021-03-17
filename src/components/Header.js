@@ -4,7 +4,7 @@ import '../styles/Header.css'
 import Logo from '../3d-assets/3d-logo.png'
 import ShoppingCart from './ShoppingCart'
 export default function Header(props) {
-  console.log("header props => ", props)
+  // console.log("header props => ", props)
   return (
     <div className={props.class}>
       <header>
@@ -28,6 +28,7 @@ export default function Header(props) {
                 getCartTotal={props.getCartTotal}
                 removeOne={props.removeOne}
                 removeAll={props.removeAll}
+                toggleCart={props.toggleCart}
               />
             </li>
           </ul>

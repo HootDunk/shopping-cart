@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Link } from "react-router-dom"
 import CartItem from "./CartItem"
 import Button from "./Button"
@@ -6,26 +6,13 @@ import '../styles/ShoppingCart.css'
 
 export default function ShoppingCart(props) {
 
-  const [isOpen, setIsOpen] = useState(false);
+  // console.log("shopping cart => ", props)
 
-  const handleClick = () => {
-    setIsOpen(prevIsOpen => !prevIsOpen)
-  }
-
-  console.log("shopping cart => ", props)
-
-  // // maybe move this outside to it's own folder
-  // const getItemInfo = (id) => {
-  //   return props.storeContent.find(item => item.id === id)
-  // }
-
-
-
-  if (isOpen){
+  if (props.cart.isOpen){
     // show cart summary with proceed to checkout button
     return(
           <div className="shopping-cart">
-            <i onClick={handleClick}  className="fas fa-shopping-cart"></i>
+            <i onClick={() => props.toggleCart()}  className="fas fa-shopping-cart"></i>
             <p>{props.cart.totalItems && `+${props.cart.totalItems}`}</p>
             <div className="shopping-cart-open">
               <h1>Shopping Cart</h1>
@@ -44,7 +31,7 @@ export default function ShoppingCart(props) {
                 <p>Subtotal</p>
                 <h2>${props.getCartTotal()}</h2>
                 <p className="fine-print">Taxes and shipping calculated at checkout</p>
-                <Link to="/checkout">
+                <Link onClick={() => props.toggleCart()} to="/checkout">
                   <Button text="Check Out"/>
                 </Link>
 
@@ -55,7 +42,7 @@ export default function ShoppingCart(props) {
   } else {
     //show cart image with amount of items
     return (
-      <div onClick={handleClick} className="shopping-cart">
+      <div onClick={() => props.toggleCart()} className="shopping-cart">
         <i className="fas fa-shopping-cart"></i>
         <p>{props.cart.totalItems && `+${props.cart.totalItems}`}</p>
       </div>

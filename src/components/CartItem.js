@@ -4,7 +4,7 @@ import AmountAdjuster from './AmountAdjuster'
 
 export default function CartItem(props) {
 
-  console.log("cart item => ", props)
+  // console.log("cart item => ", props)
 
 
   return (

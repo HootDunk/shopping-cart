@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import BuyOnline from './components/BuyOnline';
-import StoreLocator from './components/StoreLocator';
+
 import ItemInfo from "./components/ItemInfo";
 import Checkout from "./components/Checkout";
 import Header from './components/Header'
@@ -10,7 +10,7 @@ import data from './data'
 import Banner from './components/Banner'
 const Routes = (props) => {
 
-  // this changes header styling at top level to save from unecessary component nesting
+
   const getHeader = (path) => {
       return <Header 
         class={(path === '/')? "header-homepage" : "header"} 
@@ -20,6 +20,7 @@ const Routes = (props) => {
         addToCart={props.addToCart} 
         getItemInfo={props.getItemInfo}
         getCartTotal={props.getCartTotal}
+        toggleCart={props.toggleCart}
       />
   }
 
@@ -55,7 +56,6 @@ const Routes = (props) => {
             }
           }
         />
-        <Route exact path="/store-locator" component={StoreLocator} />
         <Route 
           exact path="/checkout" 
           component={(routeProps) => {

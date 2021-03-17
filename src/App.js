@@ -8,13 +8,21 @@ export default function App() {
   const [cart, setCart] = useState({
     totalItems: null,
     items: [],
+    isOpen: false,
   });
 
+  const toggleCart = () => {
+    setCart(prevCart => {
+      return {
+        ...prevCart,
+        isOpen: !prevCart.isOpen,
+      }
+    })
+  }
 
-  // connect the checkout page to js logic
-  // finish the buy it now buttom (use react-router redirect)
   // add a message for when purchase is confirmed and reset cart after timeout, then redirect to homepage
-  // need to also do the homepage.
+  // would be nice to conditionally handle the shopping cart font color so dark pages it's white and white pages it's dark
+    // wouldn't take to long but is extra
 
 
   const addToCart = (id) => {
@@ -33,6 +41,7 @@ export default function App() {
       return {
         totalItems: prevCart.totalItems + 1,
         items: copy,
+        isOpen: prevCart.isOpen,
       }
     });
   }
@@ -45,7 +54,6 @@ export default function App() {
     if (index === -1){
       return;
     }
-
     copy[index].count--;
     // if count reaches zero, remove the item
     if (copy[index].count === 0){
@@ -55,6 +63,7 @@ export default function App() {
       return {
         totalItems: prevCart.totalItems - 1,
         items: copy,
+        isOpen: prevCart.isOpen,
       }
     });
   }
@@ -66,15 +75,18 @@ export default function App() {
     copy = copy.filter(item => item.id !== id);
     let newTotal = 0;
     copy.forEach(item => newTotal += item.count);
-    setCart(
-      {
+    setCart(prevCart => {
+      return {
         totalItems: newTotal,
         items: copy,
+        isOpen: prevCart.isOpen,
       }
+    }
+
     )
   }
 
-  // maybe move this outside to it's own folder
+  // returns the complete information for that item. (imgs of product, description, price, etc)
   const getItemInfo = (id) => {
     return storeContent.find(item => item.id === id)
   }
@@ -91,9 +103,14 @@ export default function App() {
 
 
   return (
-    <div>
-
-      <Routes cart={cart} removeAll={removeAll} removeOne={removeOne} addToCart={addToCart} getItemInfo={getItemInfo} getCartTotal={getCartTotal}/>
-    </div>
+      <Routes 
+        cart={cart} 
+        removeAll={removeAll} 
+        removeOne={removeOne} 
+        addToCart={addToCart} 
+        getItemInfo={getItemInfo} 
+        getCartTotal={getCartTotal}
+        toggleCart={toggleCart}
+      />
   )
 }

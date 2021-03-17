@@ -11,4 +11,19 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: white;
+  font-family: Montserrat, sans-serif;
+}
+
+.homepage-content h1 {
+  font-size: 5rem;
+  font-weight: 400;
+}
+
+.homepage-content span {
+  font-weight: 700;
 }

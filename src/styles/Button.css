@@ -12,5 +12,14 @@ button.main:hover {
   background-color: #6e6c6c;
 }
 
+.homepage {
+  padding: 0.5rem 1rem;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
 
 /* need to make the height the same as the -margin of the container when used in overlay */

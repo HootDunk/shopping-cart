@@ -69,3 +69,12 @@ p.fine-print {
   font-size: 0.7rem;
   font-weight: 400;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .shopping-cart-open{
+    right: 0;
+    width: 80%;
+    font-size: 15px;
+  }
+}

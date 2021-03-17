@@ -6,11 +6,6 @@ import '../styles/StoreItem.css'
 export default function StoreItem(props) {
   const [showOverlay, setShowOverlay] = useState(false);
 
-
-  // const { largeImg, name, amount, price } = props.data;
-  // console.log(name)
-
-
   return (
     <div 
       onMouseEnter={() => setShowOverlay(true)}

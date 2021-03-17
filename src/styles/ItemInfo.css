@@ -2,9 +2,14 @@
 .item-info {
   height: 85vh;
   display: flex;
-  /* flex-wrap: wrap; */
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.item-info h3 {
+  color: #AFAFAF;
+  font-family: Montserrat, sans-serif;
 }
 
 .item-info > img {
@@ -18,7 +23,7 @@
 .item-details {
   /* background-color: red; */
   height: 100%;
-  width: 50%;
+  min-width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,5 +50,12 @@
   justify-content: space-evenly;
 }
 
+@media only screen and (max-width: 600px) {
+  .item-details {
+    font-size: 15px;
+    width: 100%
+  }
+}
 
-/* Need to add breakpoint for changing the flex-wrap on smaller phone screens */
+
+

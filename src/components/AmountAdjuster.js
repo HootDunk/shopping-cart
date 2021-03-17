@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/AmountAdjuster.css'
 export default function AmountAdjuster(props) {
-  console.log("amount adjuster => ", props)
+  // console.log("amount adjuster => ", props)
   return (
     <div className="amount-adjust">
       <i 

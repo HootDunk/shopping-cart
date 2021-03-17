@@ -5,7 +5,7 @@ import Button from './Button'
 import '../styles/ItemInfo.css'
 export default function ItemInfo(props) {
   console.log(props)
-  // hmmmm.
+
   const item = props.getItemInfo(Number(props.router.match.params.id));
   
   const getQuantity = () => {
@@ -48,7 +48,7 @@ export default function ItemInfo(props) {
                   text="Add to Cart" 
                 />
                 <Link to="/checkout">
-                  <Button text="Buy it now" />
+                  <Button text="Buy it now"/>
                 </Link>
               </div>
             </div>

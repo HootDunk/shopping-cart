@@ -1,9 +1,10 @@
-.store-content{
+.store-content {
   text-align: center;
 }
 
 .store-content > h1 {
-  font-weight: 300;
+  font-weight: 400;
+
 }
 
 .drink-selection {
@@ -11,3 +12,11 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.store-item img {
+  height: 24rem;
+  width: auto;
+  margin: 0 -2rem 0 -2rem;
+}
+
+

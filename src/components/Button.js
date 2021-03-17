@@ -6,7 +6,7 @@ export default function Button(props) {
   return (
     <div>
       <button 
-      className="main"
+      className={props.class? props.class : "main"}
       onClick={props.itemID? () => props.function(props.itemID) : undefined}
       >
         {props.text}
