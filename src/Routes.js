@@ -10,7 +10,6 @@ import data from './data'
 import Banner from './components/Banner'
 const Routes = (props) => {
 
-
   const getHeader = (path) => {
       return <Header 
         class={(path === '/')? "header-homepage" : "header"} 
@@ -25,7 +24,7 @@ const Routes = (props) => {
   }
 
   return(
-    <BrowserRouter>
+    <BrowserRouter basename="/shopping-cart">
         <Banner />
       <Switch>
         <Route 
