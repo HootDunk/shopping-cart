@@ -74,7 +74,6 @@ export default function App() {
   }
   // remove all items of matching id from cart
   const removeAll = (id) => {
-    console.log(id)
     let copy = [...cart.items];
     // just filter and update state
     copy = copy.filter(item => item.id !== id);

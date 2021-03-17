@@ -45,10 +45,10 @@ export default function ItemInfo(props) {
                 <Button 
                   function={props.addToCart} 
                   itemID={item.id} 
-                  text="Add to Cart" 
+                  text="Add One" 
                 />
                 <Link to="/checkout">
-                  <Button text="Buy it now"/>
+                  <Button text="Check Out"/>
                 </Link>
               </div>
             </div>

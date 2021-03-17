@@ -9,11 +9,10 @@ export default function Checkout(props) {
   const [redirectTime, setRedirectTime] = useState(5);
   const [redirect, setRedirect] = useState(null);
 
-  
+
   useEffect(()=> {
     let timer;
     if (isPurchased){
-      console.log("is purchased does change")
       timer = setInterval(() => {
         setRedirectTime(prevTime => prevTime - 1);
       }, 1000);
@@ -31,7 +30,7 @@ export default function Checkout(props) {
     }
   }, [redirectTime]);
 
-
+  
   const {resetCart} = props;
   useEffect(() => {
     if (redirect === "/"){
